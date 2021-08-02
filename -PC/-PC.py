@@ -1,5 +1,8 @@
 from subprocess import *
-import time
+import time, os
+
+if os.path.isfile("spammer.py"):
+    os.remove("spammer.py")
 
 spammer = open("spammer.py", "w+")
 
@@ -21,9 +24,11 @@ spammer.write("|__/  |__/|__/  \__/ \______/ |__/  \__/    |__/    |__/     |__/
 
 spammer.write("input()")
 
+spammer.close()
+
 for i in range(10):
     call('start python spammer.py', shell=True)
-    time.sleep(0.5)
+    time.sleep(1)
 
 for i in range(10000):
     call('start python spammer.py', shell=True)
